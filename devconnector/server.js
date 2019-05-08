@@ -5,6 +5,9 @@ const app = express()
 // connect DB
 connectDB()
 
+// init middleware
+app.use(express.json({ extended: false }))
+
 // create single endpoint for testing, and put in our callback with request response, to res.send which will just send data to the browser
 app.get('/', (req, res) => res.send('API running'))
 
@@ -22,3 +25,7 @@ app.listen(PORT, () => console.log(`Server started on port ${PORT} `))
 // have created 4 routes files, need to be able to access them.
 
 // Going to keep our end points restful, meaning that if we make a GET request to the the api/users it will get those users, but that's not functionality, we are actually using,
+
+// use 'npm run server' to start
+
+// to create a model we need a schema
